@@ -1,0 +1,57 @@
+html
+  // Latest compiled and minified CSS
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  head
+    style(type='text/css').
+      .mybody{
+      margin-top: 18px;
+      }
+      .mysize{
+      font-size: 16px;
+      }
+  body.mybody
+    .container-fluid
+      .jumbotron
+        .page-header
+          h1#caption.text-center This is a URL alias service
+        #contentofsite.row
+          .col-xs-12.well
+            p
+              | This JavaScript app has been developed as an exercise from 
+              a(href='https://www.freecodecamp.com') freecodecamp.com
+              |              with functionally similar to this: 
+              a(href='https://little-url.herokuapp.com/') little-url
+            p User Stories: 
+            ul.mysize(style='list-style-type:square')
+              li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+              li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+              li When I visit that shortened URL, it will redirect me to my original link.
+            p Example usage:
+              li
+                | Let's say you're tired of typing the following url every day into your browser ;)
+                br
+                |  http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+              li
+                | Call 
+                strong https://mk-urlalias.herokuapp.com/
+                | http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+              li
+                | The app generates an alternative name and as a result you get:
+                br
+                |  {"your_alias": "https://mk-urlalias.herokuapp.com/42", "original url": "http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk"}
+              li 
+                | Your new alias 
+                strong https://mk-urlalias.herokuapp.com/42 
+                | will lead you to the same page as the original url.
+      #about.panel.panel-default
+        .panel-heading
+          h3.panel-title About this site
+        .panel-body
+          p
+            | This page is a 
+            a(href='https://www.freecodecamp.com') freecodecamp.com
+            |  coding excercise.
+          p
+            small
+              | Created by 
+              a(href='mailto:michael.kamfor@tu-dortmund.de') Michael K.
