@@ -1,3 +1,4 @@
+// convert from html via http://html2jade.org/
 html
   // Latest compiled and minified CSS
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
@@ -23,23 +24,31 @@ html
               a(href='https://little-url.herokuapp.com/') little-url
             p User Stories: 
             ul.mysize(style='list-style-type:square')
-              li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
-              li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+              li
+                | I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+              li
+                | If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
               li When I visit that shortened URL, it will redirect me to my original link.
             p Example usage:
+            ul.mysize(style='list-style-type:square')
               li
-                | Let's say you're tired of typing the following url every day into your browser ;)
+                | Let's say you're tired of typing the following URL into your browser every day ;)
                 br
-                |  http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+                font(face='courier', size='3') http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+              br
               li
-                | Call 
-                strong https://mk-urlalias.herokuapp.com/
-                | http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+                | Pass this monster-URL to the app like this
+                br
+                font(face='courier', size='3', color='red') https://mk-urlalias.herokuapp.com/
+                font(face='courier', size='3') http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk
+              br
               li
                 | The app generates an alternative name and as a result you get:
                 br
-                |  {"your_alias": "https://mk-urlalias.herokuapp.com/42", "original url": "http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk"}
-              li 
+                font(face='courier', size='3')
+                  | {"your_alias": "https://mk-urlalias.herokuapp.com/42", "original_url": "http://www.llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.co.uk"}
+              br
+              li
                 | Your new alias 
                 strong https://mk-urlalias.herokuapp.com/42 
                 | will lead you to the same page as the original url.
